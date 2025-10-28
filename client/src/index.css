@@ -1,0 +1,81 @@
+:root {
+  --bg: #0b0f14;
+  --panel: #121821;
+  --panel-border: #1f2a37;
+  --muted: #8aa1b1;
+  --text: #e6eef4;
+  --accent: #6aa2ff;
+  --accent-2: #4a7cd6;
+  --btn-bg: #0f1722;
+  --btn-border: #304256;
+  --btn-hover: #1a2330;
+  --success: #22c55e;
+
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: dark;
+  color: var(--text);
+  background-color: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid var(--btn-border);
+  padding: 0.5em 0.9em;
+  font-size: 0.95em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--btn-bg);
+  color: var(--text);
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s, transform 0.05s ease-in-out;
+}
+button:hover {
+  background-color: var(--btn-hover);
+  border-color: var(--accent);
+}
+button:active {
+  transform: translateY(1px);
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
