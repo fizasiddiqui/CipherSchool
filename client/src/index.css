@@ -3,13 +3,18 @@
   --panel: #121821;
   --panel-border: #1f2a37;
   --muted: #0d0e0e;
-  --text: #fafafa;
+  --text: #f5f7fa;
+  --text-strong: #ffffff;
+  --text-muted: #b0b8c1;
   --accent: #6aa2ff;
   --accent-2: #4a7cd6;
   --btn-bg: #0f1722;
   --btn-border: #304256;
-  --btn-hover: #fefefe;
+  --btn-hover: #e0e7ef;
   --success: #22c55e;
+  --input-bg: #181e26;
+  --input-border: #304256;
+  --input-text: #f5f7fa;
 
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
   line-height: 1.5;
@@ -25,22 +30,25 @@
 
 a {
   font-weight: 500;
-  color: #ffffff;
+  color: var(--text-strong);
   text-decoration: inherit;
 }
 a:hover {
-  color: #5358b1;
+  color: var(--accent);
 }
 
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  color: var(--text);
+  background: var(--bg);
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  color: var(--text-strong);
 }
 
 button {
@@ -51,13 +59,42 @@ button {
   font-weight: 500;
   font-family: inherit;
   background-color: var(--btn-bg);
-  color: var(--text);
+  color: var(--text-strong);
   cursor: pointer;
   transition: background-color 0.2s, border-color 0.2s, transform 0.05s ease-in-out;
 }
 button:hover {
   background-color: var(--btn-hover);
   border-color: var(--accent);
+  color: #222;
+input, textarea, select {
+  background: var(--input-bg);
+  color: var(--input-text);
+  border: 1px solid var(--input-border);
+  border-radius: 6px;
+  padding: 0.5em 0.8em;
+  font-size: 1em;
+  font-family: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+input:focus, textarea:focus, select:focus {
+  border-color: var(--accent);
+  outline: none;
+  box-shadow: 0 0 0 2px var(--accent-2, #4a7cd6);
+}
+
+/* For custom boxes or panels */
+.box, .panel, .custom-box, .file-list, .file-tree, .editor-pane {
+  background: var(--panel);
+  color: var(--text-strong);
+  border: 1px solid var(--panel-border);
+  border-radius: 8px;
+  padding: 0.8em 1em;
+}
+.box input, .box textarea, .panel input, .panel textarea {
+  background: var(--input-bg);
+  color: var(--input-text);
+}
 }
 button:active {
   transform: translateY(1px);
@@ -69,13 +106,33 @@ button:focus-visible {
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #ffffff;
+    color: #222;
     background-color: #ffffff;
+    --text: #222;
+    --text-strong: #111;
+    --panel: #f5f7fa;
+    --panel-border: #d1d5db;
+    --btn-bg: #f9f9f9;
+    --btn-hover: #e0e7ef;
+    --input-bg: #fff;
+    --input-border: #b0b8c1;
+    --input-text: #222;
   }
   a:hover {
     color: #747bff;
   }
   button {
     background-color: #f9f9f9;
+    color: #222;
+  }
+  input, textarea, select {
+    background: #fff;
+    color: #222;
+    border: 1px solid #b0b8c1;
+  }
+  .box, .panel, .custom-box, .file-list, .file-tree, .editor-pane {
+    background: #f5f7fa;
+    color: #111;
+    border: 1px solid #d1d5db;
   }
 }
